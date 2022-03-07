@@ -1,3 +1,9 @@
+--[[
+
+Find Richest.lua
+
+]]--
+
 local minimum = 1500 -- enter your minimum robux donated amount here
 
 
