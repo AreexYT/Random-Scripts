@@ -4,7 +4,7 @@ Find Richest Player.lua
 
 ]]--
 
-local minimum = 20000 -- enter your minimum robux donated amount here
+local minimum = 10000 -- enter your minimum robux donated amount here
 
 if game.PlaceId ~= 8737602449 then return end -- failed attempt at autoexec compatability below, feel free to try and fix it
 
