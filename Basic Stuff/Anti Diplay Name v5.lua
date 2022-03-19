@@ -3,13 +3,13 @@
 Anti Diplay Name v5.lua
 
 ]]--
-
+while true do
 local AntiDisplayName = loadstring(game:HttpGet('https://pastebin.com/raw/hCMXnKWa'))(function()
     getgenv().Preferences = {}
 end)
 
 Preferences = {
-    RetroNaming = false,
+    RetroNaming = true,
     ShowOriginalName = true,
     ApplyToLeaderboard = true,
     IdentifyFriends = {Toggle = true, Identifier = '[Friend]'},
@@ -17,7 +17,7 @@ Preferences = {
     IdentifyPremium = {Toggle = true, Identifier = '[Premium]'},
     IdentifyDeveloper = {Toggle = true, Identifier = '[Game Dev]'},
     SpoofLocalPlayer = {Toggle = false, UseRandomName = true, NewName = 'Random Name Lol'},
-    Orientation = 'Horizontal'
+    Orientation = 'Vertical'
 }
 
 --[[
@@ -26,3 +26,6 @@ Preferences = {
      - Don't sell this script.
      - Don't steal credit for this script.
 ]]
+
+    wait()
+    end
