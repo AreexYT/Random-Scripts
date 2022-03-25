@@ -27,5 +27,5 @@ Preferences = {
      - Don't steal credit for this script.
 ]]
 
-    wait()
+    wait(1)
     end
