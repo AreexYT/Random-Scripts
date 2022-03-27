@@ -142,25 +142,25 @@ task.spawn(function()
             
             if Status then
                 if Status == 'IsFriend' and Check(Preferences, 'IdentifyFriends').Toggle == true then
-                    UI_Player.Text = '<font color="#FFFF00">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#B2FF66">'..NewName..'</font>'
                 elseif Check(Preferences, 'IdentifyFriends').Toggle == false then
                     UI_Player.Text = NewName
                 end
                 
                 if Status == 'IsBlocked' and Check(Preferences, 'IdentifyBlocked').Toggle == true then
-                    UI_Player.Text = '<font color="#FF0000">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#FF6666">'..NewName..'</font>'
                 elseif Check(Preferences, 'IdentifyBlocked').Toggle == false then
                     UI_Player.Text = NewName
                 end
 
                 if Status == 'IsDeveloper' and Check(Preferences, 'IdentifyDeveloper').Toggle == true then
-                    UI_Player.Text = '<font color="#FF7F00">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#FFB266">'..NewName..'</font>'
                 elseif Check(Preferences, 'IdentifyDeveloper').Toggle == false then
                     UI_Player.Text = NewName
                 end
                 
                 if Status == 'IsPremium' and Check(Preferences, 'IdentifyPremium').Toggle == true then
-                    UI_Player.Text = '<font color="#9400D3">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#FF99CC">'..NewName..'</font>'
                 elseif Check(Preferences, 'IdentifyPremium').Toggle == false then
                     UI_Player.Text = NewName
                 end
