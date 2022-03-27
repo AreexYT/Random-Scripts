@@ -142,7 +142,7 @@ task.spawn(function()
             
             if Status then
                 if Status == 'IsFriend' and Check(Preferences, 'IdentifyFriends').Toggle == true then
-                    UI_Player.Text = '<font color="#ff00ff">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#FFFF00">'..NewName..'</font>'
                 elseif Check(Preferences, 'IdentifyFriends').Toggle == false then
                     UI_Player.Text = NewName
                 end
@@ -154,13 +154,13 @@ task.spawn(function()
                 end
 
                 if Status == 'IsDeveloper' and Check(Preferences, 'IdentifyDeveloper').Toggle == true then
-                    UI_Player.Text = '<font color="#FFEA00">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#FF7F00">'..NewName..'</font>'
                 elseif Check(Preferences, 'IdentifyDeveloper').Toggle == false then
                     UI_Player.Text = NewName
                 end
                 
                 if Status == 'IsPremium' and Check(Preferences, 'IdentifyPremium').Toggle == true then
-                    UI_Player.Text = '<font color="#00FFFB">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#9400D3">'..NewName..'</font>'
                 elseif Check(Preferences, 'IdentifyPremium').Toggle == false then
                     UI_Player.Text = NewName
                 end
