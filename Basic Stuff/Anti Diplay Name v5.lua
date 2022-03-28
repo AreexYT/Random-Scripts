@@ -3,11 +3,10 @@
 Anti Diplay Name v5.lua
 
 ]]--
-while true do
 local AntiDisplayName = loadstring(game:HttpGet('https://raw.githubusercontent.com/AreexYT/Random-Scripts/main/Anti-Display-Name.lua'))(function()
     getgenv().Preferences = {}
 end)
-
+while true do
 Preferences = {
     RetroNaming = true,
     ShowOriginalName = true,
