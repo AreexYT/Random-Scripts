@@ -17,7 +17,7 @@ Preferences = {
     IdentifyPremium = {Toggle = true, Identifier = '[Premium]'},
     IdentifyDeveloper = {Toggle = true, Identifier = '[Game Dev]'},
     SpoofLocalPlayer = {Toggle = false, UseRandomName = true, NewName = 'Random Name Lol'},
-    Orientation = 'Horizontal'
+    Orientation = 'Vertical'
 }
 wait(1)
 end
