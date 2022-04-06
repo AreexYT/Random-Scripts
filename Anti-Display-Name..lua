@@ -3,6 +3,8 @@
      - Credit me at all times, please: mothra#4150 or https://v3rmillion.net/member.php?action=profile&uid=2988.
      - Don't sell this script.
      - Don't steal credit for this script.
+     
+     -Script Fixed by AreexYT
 ]]
 
 task.spawn(function()
@@ -26,9 +28,9 @@ task.spawn(function()
 
     local LP, Players, ValidStatuses, PlayerInfoPrefetch = game:GetService('Players').LocalPlayer, game:GetService('Players'), {Enum.FriendStatus.NotFriend, Enum.FriendStatus.Friend}, {
         Friend = {Image = 'rbxasset://LuaPackages/Packages/_Index/UIBlox/UIBlox/App/ImageSet/ImageAtlas/img_set_1x_2.png', Offset = '490, 218'},
-        Blocked = {Image = 'rbxasset://LuaPackages/Packages/_Index/UIBlox/UIBlox/App/ImageSet/ImageAtlas/img_set_1x_2.png', Offset = '196, 488'},
-        Premium = {Image = 'rbxasset://LuaPackages/Packages/_Index/UIBlox/UIBlox/App/ImageSet/ImageAtlas/img_set_1x_2.png', Offset = '100, 490'},
-        Developer = {Image = 'rbxasset://LuaPackages/Packages/_Index/UIBlox/UIBlox/App/ImageSet/ImageAtlas/img_set_1x_2.png', Offset = '490, 250'}
+        Blocked = {Image = 'rbxasset://LuaPackages/Packages/_Index/UIBlox/UIBlox/App/ImageSet/ImageAtlas/img_set_1x_2.png', Offset = '490, 50'},
+        Premium = {Image = 'rbxasset://LuaPackages/Packages/_Index/UIBlox/UIBlox/App/ImageSet/ImageAtlas/img_set_1x_2.png', Offset = '490, 100'},
+        Developer = {Image = 'rbxasset://LuaPackages/Packages/_Index/UIBlox/UIBlox/App/ImageSet/ImageAtlas/img_set_1x_2.png', Offset = '492, 476'}
     }
 
     local RandomGamertags = {'Wholesome', 'Soul', 'Alley Frog I', 'Mbira', 'Bug Fire', 'ItsMeWhoKildU 7', 'Mad Irishman 5', 'Mini Mouse', 'Sentinel Torrential Cobra', 'Sgt. PurpleBunnySlippers', 'MeetWit', 'Smash D Trash 4', 'Buried Alive by Love', 'Harry Dotter IV', 'Tacklebox I', 'Tacklebox II', 'InstantxxPot', 'FenderBoyXXX', 'Mr. SpitFire', 'Monster Mania 9', 'The Mustard Cat', 'The Nickname Master', 'Duke RainbowPickle 69', 'DrGregHouse', 'Bonzai', 'CobraBite', 'Jack The Ripper', 'ExoticAlpha', 'I Play Farm Heroes', 'AssasinFaceOff', 'King SNSD4LYFE', 'Sentinel Punchy Punch', 'Sir GunplaGranny 69', 'Wolverine', 'MightyFellow 8', 'Titanium', 'WWF vs WCW', 'Sgt. Chill Dude', 'XUndertakerX', 'SixStringJim VII', 'Inferno', 'LittleTickle IV', 'Centurion Sherman', 'Broomspun Zero', 'UCantBeatIt', 'Monkey Lover', 'CobraBite', 'Pistol Hydro', 'Lord BadassStickBug Zero', 'Chupa alma', 'Alpha', 'xX Alpha', 'Paladin Impulsive Flower', 'Feral Mayhem 7', 'Sentinel Red Combat', 'Snake Eyes', 'Scary Pumpkin', 'Widow Curio', 'Global meltdown I', 'General HORSE LORD', 'Cool Whip 555', 'Prometheus', 'Station WMD', 'Bearded Angler', 'TecTonic', 'Fury', 'VampireHunter', 'TickleMeElmo', 'Thrasher', 'ScaryNinja', 'Unholy', 'Mr Sentai V', 'david.baszucki', 'Sandbox', 'Master Lowercase Guy', 'NightmareOcelot', 'Lowercase Guy', 'Mental 7', 'Sgt. MonkeyKing', 'TWitMeet', 'Torrential Cobra VI', 'Voluntary', 'General The Happy Jock', 'Collaterol Damage', 'LordOfFraud', 'Iced Tea Bandit', 'Yellow Menace', 'ElactixNova', 'Mr. TubbyCandyHoarder', 'Celtic Charger', 'looking4dave', 'Sir Spectral Werewolf', 'Rocky Highway', 'Smash D Trash 8', 'Natural Gold', 'Lord Of Fraud', 'EvilDevil', 'Kevlar', 'Goofyfoot', 'Digital Goddess', 'FifthHarmony'}
