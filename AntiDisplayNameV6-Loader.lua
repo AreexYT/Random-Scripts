@@ -19,5 +19,5 @@ Preferences = {
     SpoofLocalPlayer = {Toggle = false, UseRandomName = true, NewName = 'Random Name Lol'},
     Orientation = 'Vertical'
 }
-wait()
+wait(2.5)
   end
