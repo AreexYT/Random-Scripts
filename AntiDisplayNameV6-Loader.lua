@@ -9,7 +9,7 @@ local AntiDisplayName = loadstring(game:HttpGet('https://raw.githubusercontent.c
 end)
 
 Preferences = {
-    RetroNaming = false,
+    RetroNaming = true,
     ShowOriginalName = true,
     ApplyToLeaderboard = true,
     IdentifyFriends = {Toggle = true, Identifier = '[Friend]'},
@@ -19,5 +19,5 @@ Preferences = {
     SpoofLocalPlayer = {Toggle = false, UseRandomName = true, NewName = 'Random Name Lol'},
     Orientation = 'Vertical'
 }
-wait(2.5)
+wait(5)
   end
