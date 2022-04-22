@@ -148,7 +148,7 @@ task.spawn(function()
                 end
                 
                 if Status == 'IsBlocked' and Check(Preferences, 'IdentifyBlocked').Toggle == true then
-                    UI_Player.Text = '<font color="#FF3333">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#FF3333">''<b>'..NewName..'</b>''</font>'
                 elseif Check(Preferences, 'IdentifyBlocked').Toggle == false then
                     UI_Player.Text = NewName
                 end
