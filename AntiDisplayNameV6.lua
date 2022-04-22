@@ -12,7 +12,7 @@ task.spawn(function()
         table.foreach(AntiDisplayNamev6_Connections, function(_, v)
             if typeof(v) == 'RBXScriptConnection' and v.Connected then
                 v:Disconnect()
-                
+
                 table.remove(AntiDisplayNamev6_Connections, _)
             end
         end)
@@ -37,7 +37,7 @@ task.spawn(function()
         if typeof(Instance) == 'Instance' and (Instance and Instance.Parent) then
             return true
         end
-        
+
         return false
     end
 
@@ -45,7 +45,7 @@ task.spawn(function()
         if typeof(Character) == 'Instance' and Character:IsA('Model') and Character:FindFirstChildWhichIsA('Humanoid') then
             return true
         end
-        
+
         return false
     end
 
@@ -53,7 +53,7 @@ task.spawn(function()
         if Setting and Preferences[Setting] then
             return Preferences[Setting]
         end
-        
+
         return false
     end
 
@@ -83,7 +83,7 @@ task.spawn(function()
                     end
                 end)
             end
-            
+
             if type(returnInstance) == 'boolean' and returnInstance == true then
                 if Result == true and Current ~= parent then
                     return Current
@@ -98,12 +98,12 @@ task.spawn(function()
 
     local function GetUIPlayer(Player, Expect)
         local UI_Players = FindChildByOrder(game:GetService('CoreGui'), {'PlayerList', 'PlayerListMaster', 'OffsetFrame', 'PlayerScrollList', 'SizeOffsetFrame', 'ScrollingFrameContainer', 'ScrollingFrameClippingFrame', 'ScollingFrame', 'OffsetUndoFrame'}, true)
-        
+
         if UI_Players then
             for _, v in next, UI_Players:GetChildren() do
                 if v.Name:match('^p_[%d+]') and v.Name:match('%d+') == tostring(Player.UserId) then
                     local UI_Player = FindChildByOrder(v, {'ChildrenFrame', 'NameFrame', 'BGFrame', 'OverlayFrame', 'PlayerName', 'PlayerName'}, true)
-                    
+
                     if UI_Player then
                         if type(Expect) == 'string' and Expect == 'First' and UI_Player.Parent and UI_Player.Parent.Parent then
                             return UI_Player.Parent.Parent
@@ -118,10 +118,10 @@ task.spawn(function()
 
     local function GetPlayerInfo(Player)
         local Overlay = GetUIPlayer(Player, 'First')
-        
+
         if Overlay and Overlay:FindFirstChild('PlayerIcon') then
             local Icon = Overlay:FindFirstChild('PlayerIcon')
-            
+
             if Player:GetFriendStatus(LP) == Enum.FriendStatus.Friend or (tostring(Icon.Image) == PlayerInfoPrefetch.Friend.Image and tostring(Icon.ImageRectOffset) == PlayerInfoPrefetch.Friend.Offset) then
                 return 'IsFriend'
             elseif tostring(Icon.Image) == PlayerInfoPrefetch.Blocked.Image and tostring(Icon.ImageRectOffset) == PlayerInfoPrefetch.Blocked.Offset then
@@ -136,31 +136,31 @@ task.spawn(function()
 
     local function UpdateLeaderboardName(Player, NewName)
         local UI_Player, Status = GetUIPlayer(Player, 'Second'), GetPlayerInfo(Player)
-        
+
         if UI_Player then
             UI_Player.RichText = true
-            
+
             if Status then
                 if Status == 'IsFriend' and Check(Preferences, 'IdentifyFriends').Toggle == true then
-                    UI_Player.Text = '<font color="#33FF33">'..NewName..'</font>'
+                    UI_Player.Text = '<font face="GothamBlack"><u><b><font color="#33FF33">'..NewName..'</font></b></u></font>'
                 elseif Check(Preferences, 'IdentifyFriends').Toggle == false then
                     UI_Player.Text = NewName
                 end
-                
+
                 if Status == 'IsBlocked' and Check(Preferences, 'IdentifyBlocked').Toggle == true then
-                    UI_Player.Text = '<font color="#FF3333">''<b>'..NewName..'</b>''</font>'
+                    UI_Player.Text = '<font face="GothamBlack"><s><b><font color="#FF3333">'..NewName..'</font></b></s></font>'
                 elseif Check(Preferences, 'IdentifyBlocked').Toggle == false then
                     UI_Player.Text = NewName
                 end
 
                 if Status == 'IsDeveloper' and Check(Preferences, 'IdentifyDeveloper').Toggle == true then
-                    UI_Player.Text = '<font color="#FFFF33">'..NewName..'</font>'
+                    UI_Player.Text = '<font face="GothamBlack"><i><b><font color="#FFFF33">'..NewName..'</font></b></i></font>'
                 elseif Check(Preferences, 'IdentifyDeveloper').Toggle == false then
                     UI_Player.Text = NewName
                 end
-                
+
                 if Status == 'IsPremium' and Check(Preferences, 'IdentifyPremium').Toggle == true then
-                    UI_Player.Text = '<font color="#FF33FF"><b>'..NewName..'</b></font>'
+                    UI_Player.Text = '<font face="GothamBlack"><b><font color="#FF33FF">'..NewName..'</font></b></font>'
                 elseif Check(Preferences, 'IdentifyPremium').Toggle == false then
                     UI_Player.Text = NewName
                 end
@@ -180,7 +180,7 @@ task.spawn(function()
         assert(typeof(Player) == 'Instance', 'bad argument #1; Instance expected, got '..tostring(typeof(Player)))
         assert(Player:IsA('Player') == true, 'bad argument #2; Object [Player] expected, got '..tostring(Player.Parent)..'.'..Player.ClassName)
         assert(type(Preferences) == 'table', 'bad argument #3; (Preferences [table] expected, got '..tostring(type(Preferences))..')')
-        
+
         local RetroNaming = Check(Preferences, 'RetroNaming')
         local ShowOriginalName = Check(Preferences, 'ShowOriginalName')
         local ApplyToLeaderboard = Check(Preferences, 'ApplyToLeaderboard')
@@ -190,10 +190,10 @@ task.spawn(function()
         local IdentifyDeveloper = Check(Preferences, 'IdentifyDeveloper')
         local SpoofLocalPlayer = Check(Preferences, 'SpoofLocalPlayer')
         local Orientation = Check(Preferences, 'Orientation')
-        
+
         if typeof(Player) == 'Instance' and Player:IsA('Player') then
             local Pl, TC = Player, Player.Character
-            
+
             if RetroNaming == false then
                 if Player ~= LP then
                     if IdentifyFriends.Toggle == true and GetPlayerInfo(Player) == 'IsFriend' then
@@ -203,7 +203,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, '@'..Pl.Name..'\n'..tostring(IdentifyFriends.Identifier))
                         elseif Orientation == 'Horizontal' then
                             if ApplyToLeaderboard == true then
@@ -211,7 +211,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                         AppendCharacterName(TC, Pl.Name..' '..tostring(IdentifyFriends.Identifier))
                         end
                     elseif IdentifyFriends.Toggle == false then
@@ -221,11 +221,11 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, ((ShowOriginalName == true and Pl.Name) or (ShowOriginalName == false and Pl.DisplayName)))
                         end
                     end
-                    
+
                     if IdentifyBlocked.Toggle == true and GetPlayerInfo(Player) == 'IsBlocked' then
                         if Orientation == 'Vertical' then
                             if ApplyToLeaderboard == true then
@@ -233,7 +233,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, Pl.Name..'\n@'..Pl.DisplayName..' '..tostring(IdentifyBlocked.Identifier))
                         elseif Orientation == 'Horizontal' then
                             if ApplyToLeaderboard == true and Pl.Name ~= Pl.DisplayName then
@@ -241,7 +241,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName..' '..tostring(IdentifyBlocked.Identifier))
                             end
-                            
+
                             if Pl.Name ~= Pl.DisplayName then
                                 AppendCharacterName(TC, Pl.Name..' @'..Pl.DisplayName..' '..tostring(IdentifyBlocked.Identifier))
                             else
@@ -255,11 +255,11 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, ((ShowOriginalName == true and Pl.Name) or (ShowOriginalName == false and Pl.DisplayName)))
                         end
                     end
-                    
+
                     if IdentifyPremium.Toggle == true and GetPlayerInfo(Player) == 'IsPremium' then
                         if Orientation == 'Vertical' then
                             if ApplyToLeaderboard == true then
@@ -267,7 +267,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, Pl.Name..'\n@'..Pl.DisplayName..' '..tostring(IdentifyPremium.Identifier))
                         elseif Orientation == 'Horizontal' then
                             if ApplyToLeaderboard == true and Pl.Name ~= Pl.DisplayName then
@@ -275,7 +275,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName..' '..tostring(IdentifyPremium.Identifier))
                             end
-                            
+
                             if Pl.Name ~= Pl.DisplayName then
                                 AppendCharacterName(TC, Pl.Name..' @'..Pl.DisplayName..' '..tostring(IdentifyPremium.Identifier))
                             else
@@ -289,11 +289,11 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, ((ShowOriginalName == true and Pl.Name) or (ShowOriginalName == false and Pl.DisplayName)))
                         end
                     end
-                    
+
                     if IdentifyDeveloper.Toggle == true and GetPlayerInfo(Player) == 'IsDeveloper' then
                         if Orientation == 'Vertical' then
                             if ApplyToLeaderboard == true then
@@ -301,7 +301,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, ((ShowOriginalName == true and Pl.Name..'\n') or (ShowOriginalName == false and Pl.DisplayName..'\n'))..tostring(IdentifyDeveloper.Identifier))
                         elseif Orientation == 'Horizontal' then
                             if ApplyToLeaderboard == true then
@@ -309,7 +309,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, ((ShowOriginalName == true and Pl.Name..' ') or (ShowOriginalName == false and Pl.DisplayName..' '))..tostring(IdentifyDeveloper.Identifier))
                         end
                     elseif IdentifyDeveloper.Toggle == false then
@@ -319,11 +319,11 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, ((ShowOriginalName == true and Pl.Name) or (ShowOriginalName == false and Pl.DisplayName)))
                         end
                     end
-                    
+
                     if not GetPlayerInfo(Player) and Player.Name ~= Player.DisplayName then
                         if Orientation == 'Vertical' then
                             if ApplyToLeaderboard == true then
@@ -331,7 +331,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, Player.Name..'\n@'..Player.DisplayName)
                         elseif Orientation == 'Horizontal' then
                             if ApplyToLeaderboard == true then
@@ -339,7 +339,7 @@ task.spawn(function()
                             else
                                 UpdateLeaderboardName(Player, Player.DisplayName)
                             end
-                            
+
                             AppendCharacterName(TC, Player.DisplayName..' @'..Player.Name)
                         end
                     elseif not GetPlayerInfo(Player) and Player.Name == Player.DisplayName then
@@ -348,7 +348,7 @@ task.spawn(function()
                         else
                             UpdateLeaderboardName(Player, Player.DisplayName)
                         end
-                        
+
                         AppendCharacterName(TC, ''..Player.Name)
                     end
                 elseif Player == LP then
@@ -374,10 +374,10 @@ task.spawn(function()
             task.wait(.2)
             UpdateName(Player, Preferences)
         end)
-        
+
         wait(.2)
         UpdateName(Player, Preferences)
-        
+
         table.insert(AntiDisplayNamev6_Connections, CharacterAdded)
     end)
 
@@ -406,13 +406,13 @@ task.spawn(function()
     for _, Player in next, Players:GetPlayers() do
         task.spawn(function()
             UpdateName(Player, Preferences)
-            
+
             if Player ~= LP then
                 local CharacterAdded = Player.CharacterAdded:Connect(function()
                     task.wait(.2)
                     UpdateName(Player, Preferences)
                 end)
-                
+
                 table.insert(AntiDisplayNamev6_Connections, CharacterAdded)
             end
         end)
