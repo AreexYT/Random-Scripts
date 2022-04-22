@@ -160,7 +160,7 @@ task.spawn(function()
                 end
                 
                 if Status == 'IsPremium' and Check(Preferences, 'IdentifyPremium').Toggle == true then
-                    UI_Player.Text = '<font color="#FF33FF">'..NewName..'</font>'
+                    UI_Player.Text = '<font color="#FF33FF"><b>'..NewName..'</b></font>'
                 elseif Check(Preferences, 'IdentifyPremium').Toggle == false then
                     UI_Player.Text = NewName
                 end
