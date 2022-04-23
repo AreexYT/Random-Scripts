@@ -9,15 +9,15 @@ local AntiDisplayName = loadstring(game:HttpGet('https://raw.githubusercontent.c
 end)
 
 Preferences = {
-    RetroNaming = true,
+    RetroNaming = false,
     ShowOriginalName = true,
     ApplyToLeaderboard = true,
-    IdentifyFriends = {Toggle = true, Identifier = '[Friend]'},
-    IdentifyBlocked = {Toggle = true, Identifier = '[Blocked]'},
-    IdentifyPremium = {Toggle = true, Identifier = '[Premium]'},
-    IdentifyDeveloper = {Toggle = true, Identifier = '[Game Dev]'},
+    IdentifyFriends = {Toggle = true, Identifier = '[💚]'},
+    IdentifyBlocked = {Toggle = true, Identifier = '[❤️]'},
+    IdentifyPremium = {Toggle = true, Identifier = '[💜]'},
+    IdentifyDeveloper = {Toggle = true, Identifier = '[💛]'},
     SpoofLocalPlayer = {Toggle = false, UseRandomName = true, NewName = 'Random Name Lol'},
     Orientation = 'Vertical'
 }
-wait(5)
+wait(2.5)
   end
