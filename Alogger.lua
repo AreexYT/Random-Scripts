@@ -282,7 +282,7 @@ GUI.ClrS.MouseButton1Click:connect(function()
 		end
 	end
 end)
-autoscan = false
+autoscan = true
 GUI.AutoScan.MouseButton1Click:connect(function()
 	if autoscan == false then autoscan = true
 		GUI.AutoScan.BackgroundTransparency = 0.5
