@@ -1,4 +1,4 @@
-aa = game:GetObjects("rbxassetid://9499133275")[1]
+aa = game:GetObjects("rbxassetid://9509815365")[1]
 aa.Parent = game.CoreGui
 wait(0.2)
 GUI = aa.PopupFrame.PopupFrame
@@ -16,7 +16,7 @@ ignore = {
 }
 
 GUI.Close.MouseButton1Click:connect(function()
-	GUI:TweenSize(UDim2.new(0, 360, 0, 0),"Out","Quad",0.5,true) wait(0.6)
+	GUI:TweenSize(UDim2.new(0, 225, 0, 0),"Out","Quad",0.5,true) wait(0.6)
 	GUI.Parent:TweenSize(UDim2.new(0, 0, 0, 20),"Out","Quad",0.5,true) wait(0.6)
 	aa:Destroy()
 end)
@@ -25,9 +25,9 @@ local min = false
 
 GUI.Minimize.MouseButton1Click:connect(function()
 	if min == false then
-		GUI:TweenSize(UDim2.new(0, 275, 0, 20),"Out","Quad",0.5,true) min = true
+		GUI:TweenSize(UDim2.new(0, 225, 0, 20),"Out","Quad",0.5,true) min = true
 	else
-		GUI:TweenSize(UDim2.new(0, 275, 0, 260),"Out","Quad",0.5,true) min = false
+		GUI:TweenSize(UDim2.new(0, 225, 0, 260),"Out","Quad",0.5,true) min = false
 	end
 end)
 
@@ -204,6 +204,18 @@ function getaudio(place)
 	running = false
 end
 
+
+GUI.Clr.MouseButton1Click:connect(function()
+	for _, child in pairs(GUI.Logs:GetChildren()) do
+		if child:FindFirstChild('ImageButton') then local bttn = child:FindFirstChild('ImageButton')
+			if bttn.BackgroundTransparency == 1 then
+				bttn.Parent:Destroy()
+				refreshlist()
+			end
+		end
+	end
+end)
+
 GUI.ClrS.MouseButton1Click:connect(function()
 	for _, child in pairs(GUI.Logs:GetChildren()) do
 		if child:FindFirstChild('ImageButton') then local bttn = child:FindFirstChild('ImageButton')
@@ -214,6 +226,7 @@ GUI.ClrS.MouseButton1Click:connect(function()
 		end
 	end
 end)
+
 autoscan = true
 
 game.DescendantAdded:connect(function(added)
@@ -337,12 +350,15 @@ function drag(gui)
             end
         end)
     end
+
 end)
+
 gui.InputChanged:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
         dragInput = input
     end
 end)
+
 UserInputService.InputChanged:Connect(function(input)
     if input == dragInput and dragging then
         update(input)
@@ -350,4 +366,5 @@ UserInputService.InputChanged:Connect(function(input)
 end)
 end)
 end
+
 drag(aa.PopupFrame)
