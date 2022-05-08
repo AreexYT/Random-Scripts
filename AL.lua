@@ -11,6 +11,18 @@ ignore = {
 	"rbxasset://sounds/action_jump.mp3",
 	"rbxasset://sounds/action_jump_land.mp3",
 	"rbxasset://sounds/impact_water.mp3",
+	"rbxassetid://233856105",
+	"rbxassetid://233852841",
+	"rbxassetid://233845680",
+	"rbxassetid://233854135",
+	"rbxassetid://233844049",
+	"rbxassetid://233836579",
+	"xxxxxxxxxxxxxxxxxxxxxxxx",
+	"xxxxxxxxxxxxxxxxxxxxxxxx",
+	"xxxxxxxxxxxxxxxxxxxxxxxx",
+	"xxxxxxxxxxxxxxxxxxxxxxxx",
+	"xxxxxxxxxxxxxxxxxxxxxxxx",
+	"xxxxxxxxxxxxxxxxxxxxxxxx",
 	"rbxasset://sounds/action_swim.mp3",
 	"rbxasset://sounds/action_footsteps_plastic.mp3"
 }
