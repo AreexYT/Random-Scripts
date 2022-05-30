@@ -9,7 +9,7 @@ local AntiDisplayName = loadstring(game:HttpGet('https://raw.githubusercontent.c
 end)
 
 Preferences = {
-    RetroNaming = true,
+    RetroNaming = false,
     ShowOriginalName = true,
     ApplyToLeaderboard = true,
     IdentifyFriends = {Toggle = true, Identifier = '[💚]'},
