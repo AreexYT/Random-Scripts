@@ -15,7 +15,7 @@ function esp(target, color)
             highlight.Name = "GetReal"
             highlight.Adornee = target.Character
             highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-            highlight.FillTransparency = 0.99
+            highlight.FillTransparency = 0.75
             highlight.FillColor = color
             highlight.OutlineTransparency = 0
             highlight.OutlineColor = color
