@@ -18,7 +18,7 @@ function esp(target, color)
             highlight.FillTransparency = 0.25
             highlight.FillColor = color
             highlight.OutlineTransparency = 0
-            highlight.OutlineColor = color
+            --highlight.OutlineColor = color
             highlight.Parent = target.Character
         else
             target.Character.GetReal.FillColor = color
