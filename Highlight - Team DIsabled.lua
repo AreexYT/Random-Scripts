@@ -16,9 +16,9 @@ function esp(target, color)
             highlight.Adornee = target.Character
             highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
             highlight.FillTransparency = 1
-            --highlight.FillColor = color
+            --highlight.FillColor = Color3.fromRGB(255, 255, 255)
             highlight.OutlineTransparency = 0
-            --highlight.OutlineColor = color
+            highlight.OutlineColor = Color3.fromRGB(155, 55, 255)
             highlight.Parent = target.Character
         else
             target.Character.GetReal.FillColor = color
